@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok RAFA - Kost Eksklusif</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Memastikan iframe memiliki tinggi & lebar yang pasti */
+        .iframe-wrapper {
+            width: 100%;
+            min-height: 650px;
+            background-color: var(--cream-light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        iframe {
+            width: 100%;
+            height: 750px;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Pondok <span>RAFA</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html" target="content-frame" class="nav-link active">Home</a></li>
+                <li><a href="profil.html" target="content-frame" class="nav-link">Profil</a></li>
+                <li><a href="produk.html" target="content-frame" class="nav-link">Produk</a></li>
+                <li><a href="fasilitas.html" target="content-frame" class="nav-link">Fasilitas</a></li>
+                <li><a href="kontak.html" target="content-frame" class="nav-link">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <div class="iframe-wrapper">
+            <!-- Iframe Pemuat Konten Navigasi -->
+            <iframe src="home.html" name="content-frame" id="contentFrame"></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pondok RAFA. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Mengubah status class 'active' pada menu navigasi
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

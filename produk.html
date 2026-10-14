@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - Pondok RAFA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-detail-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid #EAE0D0;
+            margin-top: 15px;
+        }
+
+        .product-image-main {
+            width: 100%;
+            height: auto;            /* Tinggi otomatis mengikuti proporsi asli foto */
+            max-height: 450px;       /* Batas tinggi maksimal agar tidak terlalu panjang */
+            object-fit: contain;     /* Memastikan seluruh bagian foto terlihat tanpa terpotong */
+            background-color: var(--navy-dark); /* Latar belakang elegan jika ukuran foto berbeda */
+            display: block;
+            margin: 0 auto;
+        }
+
+        .product-body {
+            padding: 25px;
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--cream);
+            padding-bottom: 15px;
+        }
+
+        .product-title h3 {
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .product-badge {
+            background-color: var(--accent);
+            color: var(--navy-dark);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .product-price {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--navy);
+        }
+
+        .product-price span {
+            font-size: 14px;
+            font-weight: normal;
+            color: #666;
+        }
+
+        .facility-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        .facility-list li {
+            background: var(--cream-light);
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            border-left: 3px solid var(--accent);
+            color: var(--navy-dark);
+        }
+
+        .action-area {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-content">
+        <h2>Produk Utama Kami</h2>
+        <p>Pondok RAFA menyediakan tipe kamar unggulan yang didesain khusus untuk kenyamanan dan ketenangan istirahat Anda:</p>
+
+        <div class="product-detail-card">
+            <!-- Foto Utama Kamar -->
+            <img src="./IMG/Kamar Dari Depan.jpeg" alt="Kamar Exclusive Pondok RAFA" class="product-image-main">
+            
+            <div class="product-body">
+                <div class="product-header">
+                    <div class="product-title">
+                        <h3>Kamar Standard <span class="product-badge">Terfavorit</span></h3>
+                        <p style="color: #666; font-size: 14px; margin-bottom: 0;">Ukuran Kamar: 4 x 4 Meter</p>
+                    </div>
+                    <div class="product-price">
+                        Rp 800.000,00 <span>/ bulan</span>
+                    </div>
+                </div>
+
+                <p>Kamar hunian eksklusif dengan pencahayaan alami yang baik, ventilasi udara optimal, serta penataan furniture efisien. Sangat cocok bagi mahasiswa maupun pekerja profesional yang menginginkan suasana hunian tenang dan privat.</p>
+
+                <h4 style="color: var(--navy); margin-top: 20px;">Fasilitas Dalam Kamar:</h4>
+                <ul class="facility-list">
+                    <li>🛏️ Kasur Single</li>
+                    <li>🚿 Kamar Mandi Dalam</li>
+                    <li>🪑 Meja Belajar/Kerja & Kursi </li>
+                    <li>🚪 Lemari Pakaian 2 Pintu</li>
+                    <li>📶 Wi-Fi Kencang Dedicated</li>
+                </ul>
+
+                <div class="action-area">
+                    <a href="kontak.html" target="content-frame" class="btn">Booking / Survey Kamar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Pondok RAFA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modern Hero Banner */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(27, 38, 59, 0.88), rgba(13, 27, 42, 0.82)), 
+                        url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: var(--cream);
+            padding: 60px 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .hero-badge {
+            background-color: var(--accent);
+            color: var(--navy-dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            color: var(--cream-light);
+            font-size: 32px;
+            border-bottom: none;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 16px;
+            max-width: 650px;
+            margin: 0 auto 25px auto;
+            color: var(--cream);
+            line-height: 1.6;
+        }
+
+        .hero-btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--cream);
+            padding: 10px 22px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent);
+            color: var(--navy-dark);
+        }
+
+        /* Stat Counter Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 20px 15px;
+            border-radius: 8px;
+            text-align: center;
+            border-bottom: 3px solid var(--accent);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .stat-card .number {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .stat-card .label {
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Highlights Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title h2 {
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .highlight-item {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            border-left: 4px solid var(--navy);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .highlight-item .icon {
+            font-size: 26px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .highlight-item h4 {
+            color: var(--navy);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .highlight-item p {
+            font-size: 13px;
+            margin-bottom: 0;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Quick Preview Kamar Favorit */
+        .preview-section {
+            margin-bottom: 35px;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .preview-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            border: 1px solid #EAE0D0;
+        }
+
+        .preview-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .preview-card-body {
+            padding: 15px;
+        }
+
+        .preview-card-body h3 {
+            font-size: 18px;
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .preview-card-body p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .preview-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-tag {
+            font-weight: bold;
+            color: var(--accent);
+            font-size: 15px;
+        }
+
+        /* Promo Banner */
+        .promo-box {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            color: var(--cream);
+            padding: 25px 30px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 35px;
+            border: 1px solid var(--accent);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .promo-text h3 {
+            color: var(--accent);
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .promo-text p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: var(--cream);
+        }
+
+        /* Services Include */
+        .services-box {
+            background-color: var(--cream);
+            border: 2px dashed var(--accent);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 35px;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+            list-style: none;
+        }
+
+        .services-list li {
+            font-size: 14px;
+            color: var(--navy);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Testimoni */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+            margin-bottom: 35px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #EAE0D0;
+            position: relative;
+        }
+
+        .testimonial-author {
+            font-style: normal;
+            font-weight: bold;
+            color: var(--navy);
+            margin-top: 12px;
+            display: block;
+            font-size: 13px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 20px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #EAE0D0;
+        }
+
+        .faq-item h4 {
+            color: var(--navy);
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .faq-item p {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-content">
+
+        <!-- Banner Utama (Hero) -->
+        <div class="hero">
+            <span class="hero-badge">Kost Eksklusif & Modern</span>
+            <h2>Hunian Nyaman, Aman & Strategis</h2>
+            <p>Selamat datang di Pondok RAFA. Nikmati kenyamanan tempat tinggal berkelas dengan fasilitas lengkap, suasana tenang, dan lokasi serba dekat di pusat kota.</p>
+            <div class="hero-btn-group">
+                <a href="produk.html" target="content-frame" class="btn">Lihat Tipe Kamar</a>
+                <a href="kontak.html" target="content-frame" class="btn-secondary">Hubungi Pengelola</a>
+            </div>
+        </div>
+
+        <!-- Statistik Angka -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="number">20+</div>
+                <div class="label">Kamar Siap Huni</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">24/7</div>
+                <div class="label">Keamanan CCTV</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">20 Mbps</div>
+                <div class="label">Wi-Fi High Speed</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">99%</div>
+                <div class="label">Kepuasan Penghuni</div>
+            </div>
+        </div>
+
+        <!-- Keunggulan Utama -->
+        <div class="section-title">
+            <h2>Mengapa Memilih Pondok RAFA?</h2>
+        </div>
+        <div class="highlights">
+            <div class="highlight-item">
+                <span class="icon">📍</span>
+                <h4>Lokasi Super Strategis</h4>
+                <p>Hanya 5 menit ke kampus ternama, mall, mini market, dan sarana transportasi publik.</p>
+            </div>
+            <div class="highlight-item">
+                <span class="icon">🛡️</span>
+                <h4>Sistem Keamanan Terjamin</h4>
+                <p>Akses One-Gate System, kartu gerbang pintar, dan pengawasan CCTV di setiap lorong 24/7.</p>
+            </div>
+            <div class="highlight-item">
+                <span class="icon">🚀</span>
+                <h4>Internet Fiber Optic</h4>
+                <p>Koneksi internet tanpa lag untuk mendukung aktivitas kuliah, WFH, hingga gaming online.</p>
+            </div>
+            <div class="highlight-item">
+                <span class="icon">🧹</span>
+                <h4>Area Lingkungan Bersih</h4>
+                <p>Pembersihan rutin area umum setiap hari menjaga kost selalu segar dan higienis.</p>
+            </div>
+        </div>
+
+        <!-- Banner Promo Spesial -->
+        <div class="promo-box">
+            <div class="promo-text">
+                <h3>🔥 Promo Diskon Awal Tahun!</h3>
+                <p>Dapatkan potongan harga 10% untuk pembayaran sewa langsung per 3 bulan. Kuota kamar tersisa sedikit!</p>
+            </div>
+            <a href="kontak.html" target="content-frame" class="btn" style="background-color: var(--accent); color: var(--navy-dark);">Klaim Promo</a>
+        </div>
+
+        <!-- Layanan Gratis Tambahan -->
+        <div class="services-box">
+            <h3 style="color: var(--navy); margin-bottom: 5px;">🎁 Fasilitas Tambahan Bebas Biaya</h3>
+            <p style="font-size: 13px; margin-bottom: 10px;">Setiap penyewa berhak mendapatkan layanan fasilitas ekstra berikut secara gratis:</p>
+            <ul class="services-list">
+                <li>✅ Air Minum Mineral Refill</li>
+                <li>✅ Pembersihan Kamar (1x seminggu)</li>
+                <li>✅ Bebas Biaya Sampah & Kebersihan</li>
+                <li>✅ Dapur & Gas Bersama Gratis</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
